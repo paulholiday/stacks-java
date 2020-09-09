@@ -1,7 +1,7 @@
 package com.xxAMIDOxx.xxSTACKSxx.menu.api.v1;
 
 import com.xxAMIDOxx.xxSTACKSxx.core.api.dto.ErrorResponse;
-import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.request.UpdateItemRequest;
+import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.request.UpdateCategoryRequest;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.response.ResourceUpdatedResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -19,15 +19,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /** @author ArathyKrishna */
-@RequestMapping("/v1/menu/{id}/category/{categoryId}/items/{itemId}")
-public interface UpdateItemController {
+@RequestMapping("/v1/menu/{id}/category/{categoryId}")
+public interface UpdateCategoryController {
+
   @PutMapping(consumes = "application/json", produces = "application/json; charset=utf-8")
   @Operation(
-      tags = "Item",
-      summary = "Update an item in the menu",
+      tags = "Category",
+      summary = "Update a category in the menu",
       security = @SecurityRequirement(name = "bearerAuth"),
-      description = "Update an item in the menu",
-      operationId = "UpdateMenuItem",
+      description = "Update a category to menu",
+      operationId = "UpdateMenuCategory",
       responses = {
         @ApiResponse(
             responseCode = "200",
@@ -65,18 +66,17 @@ public interface UpdateItemController {
                     mediaType = "application/json",
                     schema = @Schema(implementation = ErrorResponse.class))),
         @ApiResponse(
-            responseCode = "404",
-            description = "Resource not found",
+            responseCode = "409",
+            description = "Conflict, an item already exists",
             content =
                 @Content(
                     mediaType = "application/json",
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
-  ResponseEntity<ResourceUpdatedResponse> updateItem(
-      @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
-      @Parameter(description = "Category id", required = true) @PathVariable("categoryId")
-          UUID categoryId,
-      @Parameter(description = "Item id", required = true) @PathVariable("itemId") UUID itemId,
-      @Valid @RequestBody UpdateItemRequest body,
-      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+  ResponseEntity<ResourceUpdatedResponse> updateMenuCategory(
+          @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
+          @Parameter(description = "Category id", required = true) @PathVariable("categoryId")
+                  UUID categoryId,
+          @Valid @RequestBody UpdateCategoryRequest body,
+          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

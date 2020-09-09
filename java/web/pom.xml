@@ -2,21 +2,22 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.xxAMIDOxx</groupId>
     <artifactId>xxSTACKSxx-api</artifactId>
+    <groupId>com.xxAMIDOxx</groupId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
+  <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.xxAMIDOxx.azure</groupId>
-  <artifactId>azure</artifactId>
+  <groupId>com.xxAMIDOxx</groupId>
+  <artifactId>web</artifactId>
   <!-- can be built separately and deployed to prod when issues found-->
   <packaging>jar</packaging>
   <version>1.0.0-SNAPSHOT</version>
-  <name>azure</name>
+
+  <name>web</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -27,18 +28,30 @@
   </properties>
 
   <dependencies>
-<!-- command module dependency -->
     <dependency>
-      <groupId>com.xxAMIDOxx</groupId>
-      <artifactId>command</artifactId>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--&lt;!&ndash;  Parent pom needs command module as dependency&ndash;&gt;-->
+
+    <!--        <dependency>-->
+    <!--            <groupId>com.xxAMIDOxx</groupId>-->
+    <!--            <artifactId>command</artifactId>-->
+    <!--            <version>1.0.0-SNAPSHOT</version>-->
+    <!--            <scope>compile</scope>-->
+    <!--        </dependency>-->
+
+    <!--  Parent pom needs azure module dependency-->
+    <dependency>
+      <groupId>com.xxAMIDOxx.azure</groupId>
+      <artifactId>azure</artifactId>
       <version>1.0.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-    </dependency>
   </dependencies>
 
   <build>

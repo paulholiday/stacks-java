@@ -9,8 +9,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>command</artifactId>
+<!-- can be built separately and deployed to prod when issues found-->
+    <packaging>jar</packaging>
 
     <name>command</name>
     <!-- FIXME change it to the project's website -->
