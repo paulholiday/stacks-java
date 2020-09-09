@@ -1,0 +1,8 @@
+com/xxAMIDOxx/menu/domain/Menu.class
+com/xxAMIDOxx/menu/domain/Menu$MenuBuilder.class
+com/xxAMIDOxx/menu/service/MenuQueryService.class
+com/xxAMIDOxx/menu/domain/Item.class
+com/xxAMIDOxx/App.class
+com/xxAMIDOxx/menu/repository/AzureMenuRepository.class
+com/xxAMIDOxx/menu/service/impl/CosmosMenuQueryService.class
+com/xxAMIDOxx/menu/domain/Category.class

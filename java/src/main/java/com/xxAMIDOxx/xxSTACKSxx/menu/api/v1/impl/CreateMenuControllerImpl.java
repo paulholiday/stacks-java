@@ -5,7 +5,7 @@ import static com.xxAMIDOxx.xxSTACKSxx.menu.mappers.RequestToCommandMapper.map;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.CreateMenuController;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.request.CreateMenuRequest;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.response.ResourceCreatedResponse;
-import com.xxAMIDOxx.xxSTACKSxx.menu.handlers.CreateMenuHandler;
+import com.xxAMIDOxx.menu.handlers.CreateMenuHandler;
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
