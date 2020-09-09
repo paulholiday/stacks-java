@@ -11,12 +11,12 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosAutoConfiguration;
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosDbRepositoriesAutoConfiguration;
+import com.xxAMIDOxx.menu.domain.Category;
+import com.xxAMIDOxx.menu.domain.Menu;
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.xxSTACKSxx.core.api.dto.ErrorResponse;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.request.CreateCategoryRequest;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.response.ResourceCreatedResponse;
-import com.xxAMIDOxx.xxSTACKSxx.menu.domain.Category;
-import com.xxAMIDOxx.xxSTACKSxx.menu.domain.Menu;
-import com.xxAMIDOxx.xxSTACKSxx.menu.repository.MenuRepository;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
@@ -45,7 +45,7 @@ class CreateCategoryControllerImplTest {
 
   @Autowired private TestRestTemplate testRestTemplate;
 
-  @MockBean private MenuRepository menuRepository;
+  @MockBean private AzureMenuRepository menuRepository;
 
   @Test
   void testCanNotAddCategoryIfMenuNotPresent() {

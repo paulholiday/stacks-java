@@ -7,10 +7,12 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
-import com.xxAMIDOxx.xxSTACKSxx.menu.domain.Menu;
-import com.xxAMIDOxx.xxSTACKSxx.menu.repository.MenuRepository;
-import com.xxAMIDOxx.xxSTACKSxx.menu.service.MenuQueryService;
+import com.xxAMIDOxx.menu.domain.Menu;
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
+import com.xxAMIDOxx.menu.service.MenuQueryService;
 import java.util.List;
+
+import com.xxAMIDOxx.menu.service.impl.CosmosMenuQueryService;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.domain.Page;
@@ -23,7 +25,7 @@ public class CosmosMenuQueryServiceTest {
   @Test
   void findAll() {
 
-    MenuRepository repository = mock(MenuRepository.class);
+    AzureMenuRepository repository = mock(AzureMenuRepository.class);
     MenuQueryService menuQueryServiceImpl = new CosmosMenuQueryService(repository);
 
     Pageable pageable = mock(Pageable.class);

@@ -1,5 +1,8 @@
 package com.xxAMIDOxx.xxSTACKSxx.menu.domain;
 
+import com.xxAMIDOxx.menu.domain.Category;
+import com.xxAMIDOxx.menu.domain.Item;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

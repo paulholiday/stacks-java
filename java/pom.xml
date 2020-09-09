@@ -221,6 +221,7 @@
             <version>${pitest.version}</version>
             <type>pom</type>
         </dependency>
+    </dependencies>
 
     <reporting>
         <plugins>

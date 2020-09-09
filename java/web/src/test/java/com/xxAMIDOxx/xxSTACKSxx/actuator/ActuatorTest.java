@@ -5,8 +5,9 @@ import static org.assertj.core.api.BDDAssertions.then;
 
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosAutoConfiguration;
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosDbRepositoriesAutoConfiguration;
-import com.xxAMIDOxx.xxSTACKSxx.menu.repository.MenuRepository;
 import java.util.Map;
+
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ class ActuatorTest {
 
   @Autowired private TestRestTemplate testRestTemplate;
 
-  @MockBean private MenuRepository menuRepository;
+  @MockBean private AzureMenuRepository menuRepository;
 
   @Test
   void shouldReturn200WhenSendingRequestToHealthEndpoint() {

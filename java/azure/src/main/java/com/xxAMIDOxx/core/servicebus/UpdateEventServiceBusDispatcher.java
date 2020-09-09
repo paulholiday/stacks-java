@@ -48,7 +48,7 @@ public class UpdateEventServiceBusDispatcher implements ApplicationEventPublishe
     }
   }
 
-  protected Message createMessageFromEvent(ApplicationEvent applicationEvent)
+  public Message createMessageFromEvent(ApplicationEvent applicationEvent)
       throws JsonProcessingException {
     String content = jsonMapper.writeValueAsString(applicationEvent);
     Message message = new Message(content.getBytes(UTF_8));
