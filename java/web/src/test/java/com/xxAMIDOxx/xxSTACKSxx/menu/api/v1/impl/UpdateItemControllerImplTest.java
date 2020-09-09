@@ -17,13 +17,13 @@ import static org.springframework.http.HttpStatus.OK;
 
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosAutoConfiguration;
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosDbRepositoriesAutoConfiguration;
+import com.xxAMIDOxx.menu.domain.Category;
+import com.xxAMIDOxx.menu.domain.Item;
+import com.xxAMIDOxx.menu.domain.Menu;
 import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.xxSTACKSxx.core.api.dto.ErrorResponse;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.request.UpdateItemRequest;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.response.ResourceUpdatedResponse;
-import com.xxAMIDOxx.menu.domain.Category;
-import com.xxAMIDOxx.menu.domain.Item;
-import com.xxAMIDOxx.menu.domain.Menu;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Tag;

@@ -45,10 +45,10 @@ public interface QueryMenuController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<SearchMenuResult> searchMenu(
-          @RequestParam(value = "searchTerm", required = false) String searchTerm,
-          @RequestParam(value = "restaurantId", required = false) UUID restaurantId,
-          @RequestParam(value = "pageSize", required = false, defaultValue = "20") Integer pageSize,
-          @RequestParam(value = "pageNumber", required = false, defaultValue = "1") Integer pageNumber)
+      @RequestParam(value = "searchTerm", required = false) String searchTerm,
+      @RequestParam(value = "restaurantId", required = false) UUID restaurantId,
+      @RequestParam(value = "pageSize", required = false, defaultValue = "20") Integer pageSize,
+      @RequestParam(value = "pageNumber", required = false, defaultValue = "1") Integer pageNumber)
       throws IOException;
 
   @GetMapping(value = "/{id}", produces = "application/json; charset=utf-8")
@@ -82,6 +82,6 @@ public interface QueryMenuController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<MenuDTO> getMenu(
-          @PathVariable(name = "id") UUID id,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @PathVariable(name = "id") UUID id,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

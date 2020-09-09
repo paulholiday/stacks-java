@@ -1,7 +1,6 @@
 package com.xxAMIDOxx.menu.handlers;
 
 import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.menu.commands.DeleteCategoryCommand;
 import com.xxAMIDOxx.menu.domain.Category;
 import com.xxAMIDOxx.menu.domain.Menu;
@@ -9,17 +8,17 @@ import com.xxAMIDOxx.menu.events.CategoryDeletedEvent;
 import com.xxAMIDOxx.menu.events.MenuEvent;
 import com.xxAMIDOxx.menu.events.MenuUpdatedEvent;
 import com.xxAMIDOxx.menu.exception.CategoryDoesNotExistException;
-import org.springframework.stereotype.Component;
-
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import java.util.*;
 import java.util.stream.Collectors;
+import org.springframework.stereotype.Component;
 
 /** @author ArathyKrishna */
 @Component
 public class DeleteCategoryHandler extends MenuBaseCommandHandler<DeleteCategoryCommand> {
 
   public DeleteCategoryHandler(
-    AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
+      AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
     super(menuRepository, applicationEventPublisher);
   }
 

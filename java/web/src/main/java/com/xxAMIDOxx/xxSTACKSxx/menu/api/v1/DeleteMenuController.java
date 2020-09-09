@@ -68,6 +68,6 @@ public interface DeleteMenuController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<Void> deleteMenu(
-          @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

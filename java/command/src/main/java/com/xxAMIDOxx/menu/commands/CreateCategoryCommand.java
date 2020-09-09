@@ -1,4 +1,5 @@
 package com.xxAMIDOxx.menu.commands;
+
 import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;

@@ -74,9 +74,9 @@ public interface UpdateCategoryController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<ResourceUpdatedResponse> updateMenuCategory(
-          @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
-          @Parameter(description = "Category id", required = true) @PathVariable("categoryId")
-                  UUID categoryId,
-          @Valid @RequestBody UpdateCategoryRequest body,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
+      @Parameter(description = "Category id", required = true) @PathVariable("categoryId")
+          UUID categoryId,
+      @Valid @RequestBody UpdateCategoryRequest body,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

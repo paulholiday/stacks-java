@@ -1,19 +1,18 @@
 package com.xxAMIDOxx.core.servicebus;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.microsoft.azure.servicebus.Message;
 import com.microsoft.azure.servicebus.TopicClient;
 import com.xxAMIDOxx.core.messaging.event.ApplicationEvent;
 import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
+import java.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
-
-import java.time.Duration;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 @Component
 @ConditionalOnProperty(value = "azure.servicebus.enabled", havingValue = "true")

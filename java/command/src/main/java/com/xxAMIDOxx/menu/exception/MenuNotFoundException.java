@@ -1,6 +1,5 @@
 package com.xxAMIDOxx.menu.exception;
 
-
 import com.xxAMIDOxx.menu.commands.MenuCommand;
 
 public class MenuNotFoundException extends MenuApiException {

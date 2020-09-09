@@ -1,6 +1,5 @@
 package com.xxAMIDOxx.menu.exception;
 
-
 import com.xxAMIDOxx.menu.commands.MenuCommand;
 import com.xxAMIDOxx.menu.commands.OperationCode;
 

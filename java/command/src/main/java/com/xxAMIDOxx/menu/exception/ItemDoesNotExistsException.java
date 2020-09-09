@@ -1,7 +1,6 @@
 package com.xxAMIDOxx.menu.exception;
 
 import com.xxAMIDOxx.menu.commands.MenuCommand;
-
 import java.util.UUID;
 
 /** @author ArathyKrishna */

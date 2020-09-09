@@ -1,6 +1,5 @@
 package com.xxAMIDOxx.menu.exception;
 
-
 import com.xxAMIDOxx.menu.commands.OperationCode;
 
 public class ApiException extends RuntimeException {

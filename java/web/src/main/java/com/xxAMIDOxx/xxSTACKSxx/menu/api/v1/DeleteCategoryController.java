@@ -64,8 +64,8 @@ public interface DeleteCategoryController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<Void> deleteCategory(
-          @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
-          @Parameter(description = "Category id", required = true) @PathVariable("categoryId")
-                  UUID categoryId,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
+      @Parameter(description = "Category id", required = true) @PathVariable("categoryId")
+          UUID categoryId,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

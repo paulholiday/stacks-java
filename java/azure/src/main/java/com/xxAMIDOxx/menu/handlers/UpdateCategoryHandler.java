@@ -1,7 +1,6 @@
 package com.xxAMIDOxx.menu.handlers;
 
 import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.menu.commands.UpdateCategoryCommand;
 import com.xxAMIDOxx.menu.domain.Category;
 import com.xxAMIDOxx.menu.domain.Menu;
@@ -10,18 +9,19 @@ import com.xxAMIDOxx.menu.events.MenuEvent;
 import com.xxAMIDOxx.menu.events.MenuUpdatedEvent;
 import com.xxAMIDOxx.menu.exception.CategoryAlreadyExistsException;
 import com.xxAMIDOxx.menu.exception.CategoryDoesNotExistException;
-import org.springframework.stereotype.Component;
-
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.stereotype.Component;
 
 /** @author ArathyKrishna */
 @Component
 public class UpdateCategoryHandler extends MenuBaseCommandHandler<UpdateCategoryCommand> {
 
-  public UpdateCategoryHandler(AzureMenuRepository repository, ApplicationEventPublisher publisher) {
+  public UpdateCategoryHandler(
+      AzureMenuRepository repository, ApplicationEventPublisher publisher) {
     super(repository, publisher);
   }
 

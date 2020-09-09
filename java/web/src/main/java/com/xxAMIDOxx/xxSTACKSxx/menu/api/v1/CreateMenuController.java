@@ -64,6 +64,6 @@ public interface CreateMenuController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<ResourceCreatedResponse> createMenu(
-          @Valid @RequestBody CreateMenuRequest body,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @Valid @RequestBody CreateMenuRequest body,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

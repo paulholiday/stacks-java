@@ -1,12 +1,12 @@
-//package com.xxAMIDOxx.menu.exception;
+// package com.xxAMIDOxx.menu.exception;
 //
-//import com.nimbusds.oauth2.sdk.ErrorResponse;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.web.bind.annotation.*;
+// import com.nimbusds.oauth2.sdk.ErrorResponse;
+// import org.springframework.http.HttpStatus;
+// import org.springframework.web.bind.annotation.*;
 //
-//@RestControllerAdvice
-//@RequestMapping(produces = "application/json")
-//public class MenuApiExceptionHandler {
+// @RestControllerAdvice
+// @RequestMapping(produces = "application/json")
+// public class MenuApiExceptionHandler {
 //
 //  @ResponseBody
 //  @ExceptionHandler(MenuAlreadyExistsException.class)
@@ -73,4 +73,4 @@
 //        ex.getCorrelationId(),
 //        ex.getMessage());
 //  }
-//}
+// }

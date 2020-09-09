@@ -1,6 +1,5 @@
 package com.xxAMIDOxx.menu.handlers;
 
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
 import com.xxAMIDOxx.menu.commands.CreateItemCommand;
 import com.xxAMIDOxx.menu.domain.Category;
@@ -12,9 +11,9 @@ import com.xxAMIDOxx.menu.events.MenuItemCreatedEvent;
 import com.xxAMIDOxx.menu.events.MenuUpdatedEvent;
 import com.xxAMIDOxx.menu.exception.CategoryDoesNotExistException;
 import com.xxAMIDOxx.menu.exception.ItemAlreadyExistsException;
-import org.springframework.stereotype.Component;
-
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import java.util.*;
+import org.springframework.stereotype.Component;
 
 @Component
 public class CreateItemHandler extends MenuBaseCommandHandler<CreateItemCommand> {
@@ -22,7 +21,7 @@ public class CreateItemHandler extends MenuBaseCommandHandler<CreateItemCommand>
   private UUID itemId;
 
   public CreateItemHandler(
-    AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
+      AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
     super(menuRepository, applicationEventPublisher);
   }
 

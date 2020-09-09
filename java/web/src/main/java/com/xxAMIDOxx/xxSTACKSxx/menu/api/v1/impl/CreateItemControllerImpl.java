@@ -2,10 +2,10 @@ package com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.impl;
 
 import static com.xxAMIDOxx.xxSTACKSxx.menu.mappers.RequestToCommandMapper.map;
 
+import com.xxAMIDOxx.menu.handlers.CreateItemHandler;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.CreateItemController;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.request.CreateItemRequest;
 import com.xxAMIDOxx.xxSTACKSxx.menu.api.v1.dto.response.ResourceCreatedResponse;
-import com.xxAMIDOxx.menu.handlers.CreateItemHandler;
 import java.util.UUID;
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;

@@ -3,6 +3,9 @@ package com.xxAMIDOxx.menu.service.impl;
 import com.xxAMIDOxx.menu.domain.Menu;
 import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.menu.service.MenuQueryService;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -10,10 +13,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class CosmosMenuQueryService implements MenuQueryService {

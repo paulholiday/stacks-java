@@ -41,7 +41,7 @@ public interface AzureMenuRepository extends CosmosRepository<Menu, String> {
    * @return page of menu
    */
   Page<Menu> findAllByRestaurantIdAndNameContaining(
-          String restaurantId, String searchTerm, Pageable pageable);
+      String restaurantId, String searchTerm, Pageable pageable);
 
   /**
    * Query is constructed OOTB - out of the box, executed and results are fetched based param

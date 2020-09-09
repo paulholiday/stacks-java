@@ -2,7 +2,6 @@ package com.xxAMIDOxx.menu.events;
 
 import com.xxAMIDOxx.core.messaging.event.ApplicationEvent;
 import com.xxAMIDOxx.menu.commands.MenuCommand;
-
 import java.util.UUID;
 
 public abstract class MenuEvent extends ApplicationEvent {

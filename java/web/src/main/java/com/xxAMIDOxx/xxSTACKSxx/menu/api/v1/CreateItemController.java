@@ -66,9 +66,9 @@ public interface CreateItemController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<ResourceCreatedResponse> addMenuItem(
-          @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
-          @Parameter(description = "Category id", required = true) @PathVariable("categoryId")
-                  UUID categoryId,
-          @Valid @RequestBody CreateItemRequest body,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
+      @Parameter(description = "Category id", required = true) @PathVariable("categoryId")
+          UUID categoryId,
+      @Valid @RequestBody CreateItemRequest body,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

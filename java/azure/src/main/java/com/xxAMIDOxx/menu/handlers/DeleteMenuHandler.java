@@ -1,17 +1,16 @@
 package com.xxAMIDOxx.menu.handlers;
 
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
 import com.xxAMIDOxx.menu.commands.DeleteMenuCommand;
 import com.xxAMIDOxx.menu.domain.Menu;
 import com.xxAMIDOxx.menu.events.MenuDeletedEvent;
 import com.xxAMIDOxx.menu.events.MenuEvent;
-import org.springframework.stereotype.Component;
-
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.stereotype.Component;
 
 /**
  * Handler for deleting menu
@@ -22,7 +21,7 @@ import java.util.UUID;
 public class DeleteMenuHandler extends MenuBaseCommandHandler<DeleteMenuCommand> {
 
   public DeleteMenuHandler(
-    AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
+      AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
     super(menuRepository, applicationEventPublisher);
   }
 

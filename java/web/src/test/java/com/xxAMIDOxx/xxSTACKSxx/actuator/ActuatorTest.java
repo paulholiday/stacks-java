@@ -5,9 +5,8 @@ import static org.assertj.core.api.BDDAssertions.then;
 
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosAutoConfiguration;
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosDbRepositoriesAutoConfiguration;
-import java.util.Map;
-
 import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
+import java.util.Map;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,23 +1,22 @@
 package com.xxAMIDOxx.menu.handlers;
 
 import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.menu.commands.UpdateMenuCommand;
 import com.xxAMIDOxx.menu.domain.Menu;
 import com.xxAMIDOxx.menu.events.MenuEvent;
 import com.xxAMIDOxx.menu.events.MenuUpdatedEvent;
-import org.springframework.stereotype.Component;
-
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.stereotype.Component;
 
 @Component
 public class UpdateMenuHandler extends MenuBaseCommandHandler<UpdateMenuCommand> {
 
   public UpdateMenuHandler(
-    AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
+      AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
     super(menuRepository, applicationEventPublisher);
   }
 

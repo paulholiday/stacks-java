@@ -72,7 +72,7 @@ public interface UpdateMenuController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<ResourceUpdatedResponse> updateMenu(
-          @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
-          @Valid @RequestBody UpdateMenuRequest body,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
+      @Valid @RequestBody UpdateMenuRequest body,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

@@ -1,8 +1,6 @@
 package com.xxAMIDOxx.menu.exception;
 
-
 import com.xxAMIDOxx.menu.commands.MenuCommand;
-
 import java.util.UUID;
 
 public class MenuAlreadyExistsException extends MenuApiException {

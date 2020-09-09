@@ -10,9 +10,8 @@ import static org.mockito.Mockito.mock;
 import com.xxAMIDOxx.menu.domain.Menu;
 import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.menu.service.MenuQueryService;
-import java.util.List;
-
 import com.xxAMIDOxx.menu.service.impl.CosmosMenuQueryService;
+import java.util.List;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.domain.Page;

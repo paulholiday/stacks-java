@@ -1,16 +1,14 @@
 package com.xxAMIDOxx.menu.handlers;
 
+import com.xxAMIDOxx.core.cqrs.handler.CommandHandler;
+import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
+import com.xxAMIDOxx.menu.commands.MenuCommand;
 import com.xxAMIDOxx.menu.domain.Category;
 import com.xxAMIDOxx.menu.domain.Item;
 import com.xxAMIDOxx.menu.domain.Menu;
 import com.xxAMIDOxx.menu.events.MenuEvent;
 import com.xxAMIDOxx.menu.exception.MenuNotFoundException;
 import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
-import com.xxAMIDOxx.core.cqrs.handler.CommandHandler;
-import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
-import com.xxAMIDOxx.menu.commands.MenuCommand;
-
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -22,7 +20,7 @@ public abstract class MenuBaseCommandHandler<T extends MenuCommand> implements C
   private ApplicationEventPublisher applicationEventPublisher;
 
   public MenuBaseCommandHandler(
-    AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
+      AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
     this.menuRepository = menuRepository;
     this.applicationEventPublisher = applicationEventPublisher;
   }

@@ -66,7 +66,7 @@ public interface CreateCategoryController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<ResourceCreatedResponse> addMenuCategory(
-          @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
-          @Valid @RequestBody CreateCategoryRequest body,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @Parameter(description = "Menu id", required = true) @PathVariable("id") UUID menuId,
+      @Valid @RequestBody CreateCategoryRequest body,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

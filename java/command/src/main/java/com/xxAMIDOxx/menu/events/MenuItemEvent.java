@@ -1,7 +1,6 @@
 package com.xxAMIDOxx.menu.events;
 
 import com.xxAMIDOxx.menu.commands.MenuCommand;
-
 import java.util.UUID;
 
 public abstract class MenuItemEvent extends CategoryEvent {

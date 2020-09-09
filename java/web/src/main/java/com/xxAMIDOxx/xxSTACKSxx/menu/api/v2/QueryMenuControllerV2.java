@@ -50,6 +50,6 @@ public interface QueryMenuControllerV2 {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<MenuDTO> getMenu(
-          @PathVariable(name = "id") UUID id,
-          @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @PathVariable(name = "id") UUID id,
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
 }

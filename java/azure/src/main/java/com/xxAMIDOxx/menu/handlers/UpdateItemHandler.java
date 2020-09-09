@@ -1,6 +1,5 @@
 package com.xxAMIDOxx.menu.handlers;
 
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
 import com.xxAMIDOxx.menu.commands.UpdateItemCommand;
 import com.xxAMIDOxx.menu.domain.Category;
@@ -13,12 +12,12 @@ import com.xxAMIDOxx.menu.events.MenuUpdatedEvent;
 import com.xxAMIDOxx.menu.exception.CategoryDoesNotExistException;
 import com.xxAMIDOxx.menu.exception.ItemAlreadyExistsException;
 import com.xxAMIDOxx.menu.exception.ItemDoesNotExistsException;
-import org.springframework.stereotype.Component;
-
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.stereotype.Component;
 
 /** @author ArathyKrishna */
 @Component

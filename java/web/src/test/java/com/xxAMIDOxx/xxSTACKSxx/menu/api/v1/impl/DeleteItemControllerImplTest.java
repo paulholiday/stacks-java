@@ -14,11 +14,11 @@ import static org.springframework.http.HttpStatus.OK;
 
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosAutoConfiguration;
 import com.microsoft.azure.spring.autoconfigure.cosmosdb.CosmosDbRepositoriesAutoConfiguration;
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
-import com.xxAMIDOxx.xxSTACKSxx.core.api.dto.ErrorResponse;
 import com.xxAMIDOxx.menu.domain.Category;
 import com.xxAMIDOxx.menu.domain.Item;
 import com.xxAMIDOxx.menu.domain.Menu;
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
+import com.xxAMIDOxx.xxSTACKSxx.core.api.dto.ErrorResponse;
 import java.util.Optional;
 import java.util.UUID;
 import org.junit.jupiter.api.AfterEach;

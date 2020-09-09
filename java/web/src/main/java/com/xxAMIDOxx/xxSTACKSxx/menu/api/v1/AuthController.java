@@ -60,5 +60,5 @@ public interface AuthController {
                     schema = @Schema(implementation = ErrorResponse.class)))
       })
   ResponseEntity<GenerateTokenResponse> generateToken(
-          @Valid @RequestBody GenerateTokenRequest generateTokenRequest);
+      @Valid @RequestBody GenerateTokenRequest generateTokenRequest);
 }

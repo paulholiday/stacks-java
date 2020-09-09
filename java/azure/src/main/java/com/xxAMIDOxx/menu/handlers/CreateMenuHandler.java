@@ -1,19 +1,18 @@
 package com.xxAMIDOxx.menu.handlers;
 
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
+import com.xxAMIDOxx.core.cqrs.handler.CommandHandler;
 import com.xxAMIDOxx.core.messaging.publish.ApplicationEventPublisher;
 import com.xxAMIDOxx.menu.commands.CreateMenuCommand;
 import com.xxAMIDOxx.menu.domain.Menu;
 import com.xxAMIDOxx.menu.events.MenuCreatedEvent;
 import com.xxAMIDOxx.menu.exception.MenuAlreadyExistsException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Component;
-import com.xxAMIDOxx.core.cqrs.handler.CommandHandler;
-
+import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Component;
 
 @Component
 public class CreateMenuHandler implements CommandHandler<CreateMenuCommand> {
