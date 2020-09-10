@@ -24,10 +24,47 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <azure.springboot.version>2.3.4</azure.springboot.version>
+    <azure.servicebus.version>3.4.0</azure.servicebus.version>
+    <cosmosdb.version>2.3.3</cosmosdb.version>
+    <applicationinsights.version>2.6.1</applicationinsights.version>
   </properties>
 
   <dependencies>
-<!-- command module dependency -->
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>azure-spring-boot</artifactId>
+      <version>${azure.springboot.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
+      <version>${cosmosdb.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>applicationinsights-spring-boot-starter</artifactId>
+      <version>${applicationinsights.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>azure-servicebus</artifactId>
+      <version>${azure.servicebus.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>applicationinsights-logging-logback</artifactId>
+      <version>${applicationinsights.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- command module dependency -->
     <dependency>
       <groupId>com.xxAMIDOxx</groupId>
       <artifactId>command</artifactId>

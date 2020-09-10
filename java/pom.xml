@@ -26,10 +26,6 @@
         <java.version>11</java.version>
         <org.projectlombok.version>1.18.0</org.projectlombok.version>
         <org.springdoc-openapi.version>1.4.6</org.springdoc-openapi.version>
-        <applicationinsights.version>2.6.1</applicationinsights.version>
-        <cosmosdb.version>2.3.3</cosmosdb.version>
-        <azure.springboot.version>2.3.4</azure.springboot.version>
-        <azure.servicebus.version>3.4.0</azure.servicebus.version>
         <jackson.version>2.11.0</jackson.version>
         <mockito.version>3.5.10</mockito.version>
         <lombok.version>1.18.12</lombok.version>
@@ -103,37 +99,7 @@
             <version>${jackson.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>azure-spring-boot</artifactId>
-            <version>${azure.springboot.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
-            <version>${cosmosdb.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>applicationinsights-spring-boot-starter</artifactId>
-            <version>${applicationinsights.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>azure-servicebus</artifactId>
-            <version>${azure.servicebus.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>applicationinsights-logging-logback</artifactId>
-            <version>${applicationinsights.version}</version>
-            <scope>runtime</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
