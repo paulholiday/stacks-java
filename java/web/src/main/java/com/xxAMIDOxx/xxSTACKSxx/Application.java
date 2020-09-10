@@ -1,6 +1,8 @@
 package com.xxAMIDOxx.xxSTACKSxx;
 
 import com.microsoft.azure.spring.data.cosmosdb.repository.config.EnableCosmosRepositories;
+import com.xxAMIDOxx.menu.repository.AzureMenuFacade;
+import com.xxAMIDOxx.menu.repository.MenuFacade;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -24,4 +26,16 @@ public class Application {
   public RestTemplate restTemplate() {
     return new RestTemplate();
   }
+
+  @Bean(name = "menuFacade")
+//  @ConditionalOnProperty(name = "cloud.provider", havingValue = "azure")
+  public MenuFacade azureMenuFacadeBean() {
+    return new AzureMenuFacade();
+  }
+
+//  @Bean(name = "menuFacade")
+//  @ConditionalOnProperty(name = "cloud.provider", havingValue = "gcp")
+//  public MenuFacade gcpMenuFacadeBean() {
+//    return new GCPMenuFacade();
+//  }
 }

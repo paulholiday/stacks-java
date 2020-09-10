@@ -6,10 +6,11 @@ import com.xxAMIDOxx.menu.commands.CreateMenuCommand;
 import com.xxAMIDOxx.menu.domain.Menu;
 import com.xxAMIDOxx.menu.events.MenuCreatedEvent;
 import com.xxAMIDOxx.menu.exception.MenuAlreadyExistsException;
-import com.xxAMIDOxx.menu.repository.AzureMenuRepository;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
+
+import com.xxAMIDOxx.menu.repository.MenuFacade;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
@@ -17,13 +18,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class CreateMenuHandler implements CommandHandler<CreateMenuCommand> {
 
-  protected AzureMenuRepository menuRepository;
-
+  protected MenuFacade menuFacade;
   private ApplicationEventPublisher applicationEventPublisher;
 
   public CreateMenuHandler(
-      AzureMenuRepository menuRepository, ApplicationEventPublisher applicationEventPublisher) {
-    this.menuRepository = menuRepository;
+    MenuFacade menuFacade, ApplicationEventPublisher applicationEventPublisher) {
+    this.menuFacade = menuFacade;
     this.applicationEventPublisher = applicationEventPublisher;
   }
 
@@ -42,7 +42,7 @@ public class CreateMenuHandler implements CommandHandler<CreateMenuCommand> {
             new ArrayList<>(),
             command.getEnabled());
 
-    menuRepository.save(menu);
+    menuFacade.save(menu);
 
     applicationEventPublisher.publish(new MenuCreatedEvent(command, id));
 
@@ -51,7 +51,7 @@ public class CreateMenuHandler implements CommandHandler<CreateMenuCommand> {
 
   protected void verifyMenuNotAlreadyExisting(CreateMenuCommand command) {
     Page<Menu> existing =
-        menuRepository.findAllByRestaurantIdAndName(
+            menuFacade.findAllByRestaurantIdAndName(
             command.getRestaurantId().toString(), command.getName(), PageRequest.of(0, 1));
     if (!existing.getContent().isEmpty()
         && existing.get().anyMatch(m -> m.getName().equals(command.getName()))) {
