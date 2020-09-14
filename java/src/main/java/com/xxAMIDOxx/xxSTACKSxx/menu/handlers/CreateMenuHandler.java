@@ -6,7 +6,7 @@ import com.xxAMIDOxx.xxSTACKSxx.menu.commands.CreateMenuCommand;
 import com.xxAMIDOxx.xxSTACKSxx.menu.domain.Menu;
 import com.xxAMIDOxx.xxSTACKSxx.menu.events.MenuCreatedEvent;
 import com.xxAMIDOxx.xxSTACKSxx.menu.exception.MenuAlreadyExistsException;
-import com.xxAMIDOxx.xxSTACKSxx.menu.repository.MenuAdapter;
+import com.xxAMIDOxx.xxSTACKSxx.menu.repository.MenuRepositoryAdapter;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
@@ -17,13 +17,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class CreateMenuHandler implements CommandHandler<CreateMenuCommand> {
 
-  protected MenuAdapter menuAdapter;
+  protected MenuRepositoryAdapter menuRepositoryAdapter;
 
   private ApplicationEventPublisher applicationEventPublisher;
 
   public CreateMenuHandler(
-      MenuAdapter menuAdapter, ApplicationEventPublisher applicationEventPublisher) {
-    this.menuAdapter = menuAdapter;
+      MenuRepositoryAdapter menuRepositoryAdapter,
+      ApplicationEventPublisher applicationEventPublisher) {
+    this.menuRepositoryAdapter = menuRepositoryAdapter;
     this.applicationEventPublisher = applicationEventPublisher;
   }
 
@@ -42,7 +43,7 @@ public class CreateMenuHandler implements CommandHandler<CreateMenuCommand> {
             new ArrayList<>(),
             command.getEnabled());
 
-    menuAdapter.save(menu);
+    menuRepositoryAdapter.save(menu);
 
     applicationEventPublisher.publish(new MenuCreatedEvent(command, id));
 
@@ -51,7 +52,7 @@ public class CreateMenuHandler implements CommandHandler<CreateMenuCommand> {
 
   protected void verifyMenuNotAlreadyExisting(CreateMenuCommand command) {
     Page<Menu> existing =
-        menuAdapter.findAllByRestaurantIdAndName(
+        menuRepositoryAdapter.findAllByRestaurantIdAndName(
             command.getRestaurantId().toString(), command.getName(), PageRequest.of(0, 1));
     if (!existing.getContent().isEmpty()
         && existing.get().anyMatch(m -> m.getName().equals(command.getName()))) {

@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AzureMenuAdapter implements MenuAdapter {
+public class AzureMenuRepositoryAdapter implements MenuRepositoryAdapter {
 
   @Autowired protected AzureMenuRepository azureMenuRepository;
 
